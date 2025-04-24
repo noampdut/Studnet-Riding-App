@@ -52,7 +52,7 @@ This combination allows the app to recommend not just any available ride, but ri
 | Frontend    | Android Studio (Java)                      |
 | Backend     | ASP.NET Core Web API                       |
 | ML/NLP      | Python + BERT for recommendation engine    |
-| Database    | Firebase Authentication + MongoDB Atlas    |
+| Database    | Firebase Authentication + MongoDB          |
 | Realtime    | Firebase Notifications                     |
 | Hosting     | Google Cloud Platform (GCP)                |
 
@@ -75,7 +75,7 @@ This combination allows the app to recommend not just any available ride, but ri
 - The project is **not deployable out-of-the-box** due to reliance on paid services:
   - Google Cloud API (Maps, Places, Distance Matrix)
   - Firebase (Auth + Realtime Notifications)
-  - MongoDB Atlas (Remote DB hosting)
+  - MongoDB (key)
 
 - To run locally:
   - Register your own API keys for each external service
@@ -86,7 +86,6 @@ This combination allows the app to recommend not just any available ride, but ri
 
 ## 📌 Status
 
-- MVP / Proof-of-Concept stage
 - Fully implemented logic and integrations
 - UI is minimal and functional (not production-ready)
 - Designed to demonstrate architecture and algorithmic strength
