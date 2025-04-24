@@ -5,8 +5,12 @@ A smart carpool mobile application designed for students, using personalized rid
 ---
 
 ## 📽️ Demo Video  
-Watch the app demo here:  
+To get a quick glimpse of the system in action, watch our short demo on YouTube:
 [🎬 YouTube – Smart Carpool App](https://www.youtube.com/watch?v=vE8tia67qhk)
+
+Note:
+This video showcases a small part of the full experience – specifically the ride-request flow.
+Core features such as smart recommendations, real-time alerts, and full user interactions are implemented in the system but not fully shown in the video.
 
 ---
 
