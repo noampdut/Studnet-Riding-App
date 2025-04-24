@@ -1,51 +1,104 @@
-# Student Riding Application
+# 🚗 Smart Carpool App
+
+A smart carpool mobile application designed for students, using personalized ride matching powered by NLP and a BERT-based recommendation model.
+
+---
+
+## 📽️ Demo Video  
+Watch the app demo here:  
+[🎬 YouTube – Smart Carpool App](https://www.youtube.com/watch?v=vE8tia67qhk)
+
+---
+
+## 📂 Project Repositories
+
+- 🔧 **.NET Web API (Backend):** [SmartCarpool-Backend](https://github.com/noampdut/Student-Riding-App-Server-Side-.git)
+- 📱 **Android App (Client):** [Student-Riding-App (Frontend)](https://github.com/noampdut/Student-Riding-App-Android.git)
+
+---
 
 
-#### Overview
-Welcome to the Student Riding Application! This innovative platform revolutionizes how students connect for rides. Designed to streamline the process of finding and sharing rides, this application leverages cutting-edge technology to provide a seamless and intelligent experience.
+## 📱 Overview
 
-## Main Goal
-Our primary goal is to facilitate efficient and convenient ride-sharing among students. By integrating advanced AI-driven matching algorithms and real-time notifications, we ensure a smooth and user-friendly experience for both drivers and passengers.
+SmartCarpool is a ride-sharing app tailored for students, aiming to connect the most compatible drivers and passengers through a combination of static ride data, semantic analysis, and external optimization APIs.
 
-## Key Features
-- **AI-Driven Matching**: Utilizes sophisticated AI algorithms to pair drivers and passengers effectively, ensuring optimal ride matches.
-- **Recommendation System**: Provides personalized recommendations for potential ride matches based on user preferences and historical data.
-- **Real-Time Notifications**: Keeps users informed with instant updates about ride statuses and new opportunities.
-- **NLP-Enhanced Search**: Allows users to find rides and matches quickly and accurately with advanced search capabilities.
-- **Google Maps Integration**: Provides seamless navigation and location services directly within the app for an enhanced user experience.
-- **Third-Party API Connectivity**: Enhances functionality with integrations from external services.
+The project consists of an Android mobile app, a backend API in .NET, and a Python-based machine learning recommendation engine.
 
-## Links
+---
 
-- **Server-Side API**: [Student-Riding-Server](https://github.com/noampdut/Student-Riding-App-Server-Side-.git)
-- **Android Client**: [Student-Riding-Android](https://github.com/noampdut/Student-Riding-App-Android.git)
+## 🧠 Recommendation Engine – How It Works
 
-## Setup and Running
+Our recommendation system blends two approaches to achieve optimal matching:
 
-### Server-Side Setup
-1. Clone the server repository:
-   ```bash
-   git clone https://github.com/noampdut/Student-Riding-App-Server-Side-.git
-   cd Student-Riding-Server
-   ```
-2. Configure MongoDB and update connection settings in `appsettings.json`.
-3. Restore dependencies and run the server:
-   ```bash
-   dotnet restore
-   dotnet run
-   ```
+### 1. 🔢 Structured Matching – Hard Features
+- **Inputs:** departure time, location, distance, availability, ride history, and user reviews
+- **Processing:** Google Maps APIs for optimal route calculations
+- **Goal:** filter matches based on logistical feasibility and preferences
 
-### Android Client Setup
-1. Clone the Android client repository:
-   ```bash
-   git clone https://github.com/noampdut/Student-Riding-App-Android.git
-   cd Student-Riding-Android
-   ```
-2. Open the project in Android Studio.
-3. Sync Gradle files.
-4. Update the server URL in `SettingsActivity`.
-5. Build and run the application on an emulator or physical device.
+### 2. 🧠 Semantic Matching – NLP & ML
+- Each user writes a short free-text description (e.g., "I'm quiet and like chill music")
+- A **BERT-based NLP model** processes bios from both drivers and passengers
+- The model computes **semantic similarity** to determine psychological and behavioral compatibility
+- Final match score = semantic score + structured data score
 
-## Additional Notes
-- Ensure the server is operational before running the Android client.
-- The application has been praised for its innovative approach, including its AI-powered recommendation system, which has significantly enhanced user satisfaction.
+This combination allows the app to recommend not just any available ride, but rides that feel safer, smoother, and more pleasant.
+
+---
+
+## 🔧 Technologies Used
+
+| Layer       | Stack                                      |
+|-------------|--------------------------------------------|
+| Frontend    | Android Studio (Java)                      |
+| Backend     | ASP.NET Core Web API                       |
+| ML/NLP      | Python + BERT for recommendation engine    |
+| Database    | Firebase Authentication + MongoDB Atlas    |
+| Realtime    | Firebase Notifications                     |
+| Hosting     | Google Cloud Platform (GCP)                |
+
+---
+
+## 🧩 Key Features
+
+- 🔐 Role-based user registration (drivers & passengers)
+- 📍 Create, search, and manage ride requests and offers
+- 📊 AI-based matching using BERT and structured ride data
+- 🔔 Push notifications using Firebase
+- ⭐ Ride rating system for both parties
+- 🧱 Modular backend (.NET MVC + Services)
+
+
+---
+
+## ⚠️ Setup Notes
+
+- The project is **not deployable out-of-the-box** due to reliance on paid services:
+  - Google Cloud API (Maps, Places, Distance Matrix)
+  - Firebase (Auth + Realtime Notifications)
+  - MongoDB Atlas (Remote DB hosting)
+
+- To run locally:
+  - Register your own API keys for each external service
+  - Set up the backend with your connection strings
+  - Train or load the pre-trained BERT model in the Python component
+
+---
+
+## 📌 Status
+
+- MVP / Proof-of-Concept stage
+- Fully implemented logic and integrations
+- UI is minimal and functional (not production-ready)
+- Designed to demonstrate architecture and algorithmic strength
+
+---
+
+## 👤 Author
+
+Created by Noam Pdut and Lilach Lacham –  
+[GitHub Profile](https://github.com/noampdut)
+
+---
+
+
+
